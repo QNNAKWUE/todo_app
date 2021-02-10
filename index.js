@@ -2,6 +2,8 @@ const express = require ("express");
 const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 mongoose.connect('mongodb://localhost/TODO_APP')
 .then(() => console.log("Connected to mongodb"))
@@ -9,6 +11,12 @@ mongoose.connect('mongodb://localhost/TODO_APP')
 
 
 const port = process.env.PORT || 5050
- app.listen(port, () => console.log('Listening on port 5050'));
+app.listen(port, () => console.log('Listening on port 5050'));
+
+
+
+
+
+
 
 
