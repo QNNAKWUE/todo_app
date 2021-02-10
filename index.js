@@ -2,7 +2,6 @@ const express = require ("express");
 const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: false}));
 
 
 mongoose.connect('mongodb://localhost/TODO_APP')
